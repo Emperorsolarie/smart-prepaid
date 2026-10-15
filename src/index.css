@@ -1,0 +1,814 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+}
+
+.app-container{
+  display: flex;
+  min-height: 100vh;
+  width: 100vw;
+}
+
+/******************************************* ASIDE ***************************************************/
+.side-container{
+  display: flex;
+  width: 250px;
+  background-color: hsl(33, 100%, 97%);
+  min-height: 100vh;
+  height: auto;
+  padding-left: 15px;
+  font-family: 'Times New Roman', Times, serif;
+  flex-direction: column;
+  justify-content:space-between;
+}
+
+.side-container h1{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 2rem;
+  margin: 0;
+  display: flex;
+  padding-top: 1.4rem;
+}
+
+h1 span{
+  color: brown;
+}
+
+.side-container .sidebar-links{
+  font-size: 1.3rem;
+  padding: 4px;
+  display: block;
+  transition: 0.3s ease;
+  color: black;
+  text-decoration: none;
+  font-weight: bolder;
+  margin-bottom: 2rem;
+
+}
+
+.side-container .sidebar-links:hover{
+  border-left: 6px solid hsl(0, 100%, 50%);
+  cursor: pointer;
+  padding-left: 8px;
+}
+
+.logout {
+    margin-top: auto;
+    padding: 12px 16px;
+    color: #ffffff;
+    background-color: #dc3545;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    text-align: center;
+    transition: background-color 0.2s ease;
+}
+
+.logout:hover {
+    background-color: #bb2d3b;
+}
+
+
+/**************************************  MAIN ******************************************************* */
+
+.main-container{
+  flex: 1;
+  margin-left: 5rem;
+}
+
+.cards-container{
+  display: flex;
+  gap: 30px;
+}
+
+.balance-card{
+  background-color: whitesmoke;
+  width: 25%;
+  text-align: center;
+  border: 1px solid red;
+  border-radius: 1rem;
+  height: 180px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  font-family: 'Times New Roman', Times, serif;
+  transition: 0.3s ease;
+  
+}
+
+.balance-card:hover{
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.balance-card h4{
+  text-align: center;
+  font-weight: bolder;
+  font-size: 1.7rem;
+}
+
+.meter-card{
+  background-color: whitesmoke;
+  width: 25%;
+  text-align: center;
+  border: 1px solid red;
+  border-radius: 1rem;
+  height: 180px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  font-family: 'Times New Roman', Times, serif;
+  transition: 0.3s ease;
+}
+
+.meter-card:hover{
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.meter-card h4{
+  text-align: center;
+  font-weight: bolder;
+  font-size: 1.7rem;
+}
+
+.last-card{
+  background-color: whitesmoke;
+  width: 25%;
+  text-align: center;
+  border: 1px solid red;
+  border-radius: 1rem;
+  height: 180px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  font-family: 'Times New Roman', Times, serif;
+  transition: 0.3s ease;
+}
+
+.last-card:hover{
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.last-card h4{
+  text-align: center;
+  font-weight: bolder;
+  font-size: 1.7rem;
+}
+
+.last-card p{
+  margin: 2px;
+}
+
+.last-card span{
+  font-weight: bold;
+}
+
+.recharge-button{
+  margin-top: 2rem;
+  background-color: hsl(210, 92%, 20%);
+  border: 0;
+  color: white;
+  width: 10rem;
+  min-height: 3.5rem;
+  border-radius: 2rem;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 1.1rem;
+  font-weight: bolder;
+  transition: 0.3 ease;
+  cursor: pointer;
+}
+
+.recharge-button:hover{
+  background-color: hsl(210, 92%, 15%);
+}
+.good-balance{
+  color: green;
+}
+
+.low-balance{
+  color: yellow;
+}
+.empty-balance{
+  color: red;
+}
+
+
+/******************************************* MY METER **********************************************/
+
+.meter-container{
+  flex: 1;
+  margin-left: 5rem;
+}
+
+.meter-cards{
+  display: flex;
+  gap: 30px;
+}
+
+.number-card{
+  background-color: whitesmoke;
+  width: 20%;
+  text-align: center;
+  border: 1px solid red;
+  border-radius: 1rem;
+  height: 180px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  font-family: 'Times New Roman', Times, serif;
+  transition: 0.3s ease;
+}
+
+.number-card:hover{
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.number-card h4{
+  text-align: center;
+  font-weight: bolder;
+  font-size: 1.7rem;
+}
+
+.meter-balance-card{
+  background-color: whitesmoke;
+  width: 20%;
+  text-align: center;
+  border: 1px solid red;
+  border-radius: 1rem;
+  height: 180px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  font-family: 'Times New Roman', Times, serif;
+  transition: 0.3s ease;
+}
+
+.meter-balance-card:hover{
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.meter-balance-card h4{
+  text-align: center;
+  font-weight: bolder;
+  font-size: 1.7rem;
+}
+
+.status-card{
+  background-color: whitesmoke;
+  width: 20%;
+  text-align: center;
+  border: 1px solid red;
+  border-radius: 1rem;
+  height: 180px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  font-family: 'Times New Roman', Times, serif;
+  transition: 0.3s ease;
+}
+
+.status-card:hover{
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.status-card h4{
+  text-align: center;
+  font-weight: bolder;
+  font-size: 1.7rem;
+}
+
+
+.myMeter-last-card{
+  background-color: whitesmoke;
+  width: 20%;
+  text-align: center;
+  border: 1px solid red;
+  border-radius: 1rem;
+  height: 180px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  font-family: 'Times New Roman', Times, serif;
+  transition: 0.3s ease;
+}
+
+.myMeter-last-card:hover{
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.myMeter-last-card h4{
+  text-align: center;
+  font-weight: bolder;
+  font-size: 1.7rem;
+}
+
+.myMeter-last-card p{
+  margin: 2px;
+}
+
+.myMeter-last-card span{
+  font-weight: bold;
+}
+
+.connect {
+  color: green;
+  font-weight: bold;
+}
+
+.disconnect {
+  color: red;
+  font-weight: bold;
+}
+
+.status-dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.connect .status-dot {
+  background-color: green;
+}
+
+.disconnect .status-dot {
+  background-color: red;
+}
+
+.meter-balance-card .good-balance{
+  font-weight: bold;
+  color: green;
+}
+
+.meter-balance-card .low-balance{
+  font-weight: bold;
+  color: darkgoldenrod;
+}
+
+.meter-balance-card .empty-balance{
+  font-weight: bold;
+  color: red;
+}
+
+.meter-recharge-button {
+  margin-top: 2rem;
+  background-color: hsl(210, 92%, 20%);
+  border: none;
+  color: white;
+  width: 12rem;
+  min-height: 3.5rem;
+  border-radius: 2rem;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 1.1rem;
+  font-weight: bolder;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.meter-recharge-button:hover {
+  background-color: hsl(210, 92%, 15%);
+}
+
+@media (max-width: 900px) {
+  .meter-cards {
+    flex-wrap: wrap;
+  }
+
+  .meter-cards > div {
+    width: 40%;
+  }
+
+  .myMeter-last-card p {
+    margin: 0.3rem 0;
+    font-size: 0.8rem;
+    transform: translateY(-12px);
+  }
+}
+
+@media (max-width: 1032px) {
+
+  .myMeter-last-card p{
+    transform: translateY(-14px);
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .side-container {
+    width: 220px;
+  }
+
+  .side-container h1{
+    margin-right: 2rem;
+    font-size: 1.7rem;
+  }
+
+  .meter-container {
+    margin-left: 1rem;
+    font-size: 1rem;
+  }
+
+  .meter-container h1{
+    font-size: 1.5rem;
+    margin-top: 1.5rem;
+  }
+
+  .meter-container h4{
+    font-size: 1.1rem;
+  }
+
+  .meter-cards > div {
+    width: 90%;
+    height: 105px;
+  }
+
+  .myMeter-last-card p{
+    transform: translateY(-15px);
+    font-size: 0.7rem;
+  }
+
+  .meter-recharge-button{
+    width: 90%;
+  }
+
+}
+
+@media (max-width: 440px) {
+
+  .side-container {
+    width: 180px;
+  }
+
+  .side-container h1 {
+    font-size: 1.5rem;
+    margin-right: 1rem;
+  }
+
+  .meter-container h1 {
+    font-size: 1.3rem;
+    margin-left: 0.5rem;
+  }
+
+  .meter-cards{
+    gap: 31px;
+  }
+
+
+  .meter-cards > div {
+      height: 150px;
+    }
+
+    .myMeter-last-card {
+      height: 150px;
+    }
+
+  .myMeter-last-card p{
+    transform: translateY(+5px);
+    font-size: 1rem;
+  }
+
+}
+
+@media (max-width: 400px) {
+
+  .side-container {
+    width: 180px;
+  }
+
+  .side-container h1 {
+    font-size: 1.5rem;
+    margin-right: 1rem;
+  }
+
+  .meter-container h1 {
+    font-size: 1.3rem;
+    margin-left: 0.5rem;
+  }
+
+
+  .meter-cards > div {
+      height: 150px;
+    }
+
+    .myMeter-last-card {
+      height: 150px;
+    }
+
+  .myMeter-last-card p{
+    transform: translateY(+5px);
+    font-size: 1rem;
+  }
+
+}
+
+
+@media (max-width: 380px) {
+  .meter-recharge-button {
+    margin-top: 1rem;
+  }
+
+  .meter-cards > div {
+    height: 105px;
+  }
+
+  .myMeter-last-card p{
+    transform: translateY(-15px);
+    font-size: 0.7rem;
+  }
+
+  .myMeter-last-card {
+    height: 105px;
+  }
+
+  .meter-cards {
+    gap: 25px;
+  }
+}
+
+
+
+
+/******************************************* RECHARGE ***********************************************/
+
+.recharge-container{
+  flex: 1;
+  margin-left: 5rem;
+}
+
+.recharge-cards{
+  display: flex;
+  gap: 30px;
+}
+
+.meter-number-card{
+  background-color: whitesmoke;
+  width: 25%;
+  text-align: center;
+  border: 1px solid red;
+  border-radius: 1rem;
+  height: 200px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  font-family: 'Times New Roman', Times, serif;
+  transition: 0.3s ease;
+}
+
+.meter-number-card:hover{
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.meter-number-card .label-p{
+  text-align: center;
+  font-weight: bolder;
+  font-size: 1.6rem;
+}
+
+.meter-number-card input{
+  width: 15rem;
+  height: 1.7rem;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.token-card{
+ background-color: whitesmoke;
+  width: 25%;
+  text-align: center;
+  border: 1px solid red;
+  border-radius: 1rem;
+  height: 200px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  font-family: 'Times New Roman', Times, serif;
+  transition: 0.3s ease; 
+}
+
+.token-card:hover{
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.token-card p{
+  text-align: center;
+  font-weight: bolder;
+  font-size: 1.7rem;
+}
+
+.token-card input{
+  width: 12.7rem;
+  height: 1.7rem;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.activate-button{
+  margin-top: 2rem;
+  background-color: hsl(210, 92%, 20%);
+  border: 0;
+  color: white;
+  width: 10rem;
+  min-height: 3.5rem;
+  border-radius: 2rem;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 1.1rem;
+  font-weight: bolder;
+  transition: 0.3 ease;
+  cursor: pointer;
+}
+
+.activate-button:hover{
+  background-color: hsl(210, 92%, 15%);
+}
+
+.activate-button:disabled {
+  background-color: red;
+  color: white;
+  cursor: not-allowed;
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+/*************************************** HISTORY *******************************************/
+
+.history-container{
+  flex: 1;
+  margin-left: 5rem;
+}
+
+.history-table{
+  width: 97%;
+  margin: 1rem auto;
+  border-collapse: collapse;
+  transition: 0.3s ease;
+  min-width: 800px;
+}
+
+.history-table th{
+  border: 1px solid black;
+  padding: 1rem;
+  text-align: center;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 1.4rem;
+  font-weight: bolder;
+  background-color: blue;
+  color: white;
+}
+
+.history-table td{
+  border: 1px solid black;
+  padding: 0.7rem;
+  text-align: center;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 1.1rem;
+  
+}
+
+.successful{
+  background-color: green;
+  color: white;
+}
+
+.failed{
+  background-color: red;
+  color: white;
+}
+
+.no-transactions {
+  padding: 2rem;
+  text-align: center;
+}
+
+.history-table tbody tr:hover {
+   background-color: hwb(0 91% 9%);
+  transition: 0.3s ease;
+}
+
+.table-card {
+  width: 92%;
+  background-color: white;
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.table-card h2{
+  text-align: center;
+  font-size: 2rem;
+  margin: 0;
+}
+
+.table-wrapper{
+  overflow-x: auto;
+}
+
+.clear-history-button{
+  margin-left: 1rem;
+  background-color: hsl(0, 92%, 20%);
+  border: 0;
+  color: white;
+  width: 10rem;
+  min-height: 3.5rem;
+  border-radius: 2rem;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 1.1rem;
+  font-weight: bolder;
+  transition: 0.3 ease;
+  cursor: pointer;
+}
+
+.clear-history-button:hover{
+  background-color: hsl(0, 92%, 15%);
+}
+
+/************************************ CONNECT METER **************************************/
+
+.connect-meter-container {
+  margin-left: 5rem;
+  min-height: 100vh;
+}
+
+.connect-meter-container h1{
+  text-align: center;
+  font-size: 2.3rem;
+}
+
+.connect-meter-container h2{
+  margin: 2rem;
+  font-size: 1.9rem;
+}
+
+.connect-meter-input label{
+  font-weight: bolder;
+  font-size: 1.7rem;
+  margin-left: 1rem;
+}
+
+.connect-meter-input{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.connect-meter-input input {
+  width: 25rem;
+  height: 2rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border-radius: 5px;
+  font-size: 1rem;
+  border: 2px solid black;
+  margin-right: 1rem;
+}
+
+.connect-meter-button{
+  margin-top: 2rem;
+  background-color: hsl(210, 92%, 20%);
+  border: 0;
+  color: white;
+  width: 10rem;
+  min-height: 3.5rem;
+  border-radius: 2rem;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 1.1rem;
+  font-weight: bolder;
+  transition: 0.3 ease;
+  cursor: pointer;
+}
+
+.connect-meter-button:hover{
+  background-color: hsl(210, 92%, 15%);
+}
+
+.disconnect-meter-button{
+  margin-top: 2rem;
+  background-color: hsl(0, 92%, 20%);
+  border: 0;
+  color: white;
+  width: 10rem;
+  min-height: 3.5rem;
+  border-radius: 2rem;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 1.1rem;
+  font-weight: bolder;
+  transition: 0.3 ease;
+  cursor: pointer;
+  margin-left: 22rem;
+}
+
+.disconnect-meter-button:hover{
+  background-color: hsl(0, 92%, 15%);
+}
+
+.connect-meter-card{
+ background-color: whitesmoke;
+  width: 100%;
+  text-align: center;
+  border: 1px solid red;
+  border-radius: 1rem;
+  height: 180px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  font-family: 'Times New Roman', Times, serif;
+  transition: 0.3s ease; 
+}
+
+.connect-meter-card:hover{
+  transform: scale(1.1);
+  cursor: pointer;
+}
