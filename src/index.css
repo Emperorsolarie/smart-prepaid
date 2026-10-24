@@ -1,0 +1,1684 @@
+
+/* ---------- GLOBAL LAYOUT ---------- */
+:root {
+  font-family: "Inter", "Segoe UI", sans-serif;
+  color: #172033;
+  background: #f5f7fb;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+
+  --primary: #2563eb;
+  --primary-dark: #1d4ed8;
+  --navy: #111c3a;
+  --text-muted: #64748b;
+  --border: #e2e8f0;
+  --surface: #ffffff;
+  --success: #16a34a;
+  --danger: #dc2626;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  width: 100%;
+  background: #f5f7fb;
+}
+
+.app-container {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* ---------- SIDEBAR ---------- */
+.side-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  width: 250px;
+  min-height: 100vh;
+  padding: 28px 16px 20px;
+  background: var(--navy);
+  color: #ffffff;
+  font-family: inherit;
+}
+
+.side-container h1 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 40px;
+  padding: 0 10px;
+  font-family: inherit;
+  font-size: 1.65rem;
+  font-weight: 750;
+  letter-spacing: -0.8px;
+}
+
+.side-container h1 span {
+  color: #60a5fa;
+}
+
+.side-container .sidebar-links {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 14px;
+  margin: 0 0 8px;
+  border-left: 3px solid transparent;
+  border-radius: 9px;
+  color: #cbd5e1;
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.side-container .sidebar-links:hover,
+.side-container .sidebar-links.active {
+  background: #243252;
+  border-left-color: #60a5fa;
+  color: #ffffff;
+}
+
+.logout-container {
+    margin-top: auto;
+}
+
+.logout {
+  width: 100%;
+  margin-top: auto;
+  padding: 12px 16px;
+  border: 1px solid #7f1d1d;
+  border-radius: 9px;
+  background: #991b1b;
+  color: #ffffff;
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-align: center;
+  transition: background 0.2s ease;
+}
+
+.logout:hover {
+  background: #b91c1c;
+}
+
+
+/* ===== SIDEBAR ===== */
+
+.side-container {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  width: 250px;
+  min-height: 100vh;
+  padding: 28px 16px 20px;
+  background: #111c3a;
+  color: white;
+}
+
+.sidebar-brand h1 {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin: 0 0 40px;
+  font-size: 1.55rem;
+  white-space: nowrap;
+}
+
+.sidebar-brand h1 svg {
+  flex-shrink: 0;
+  color: #60a5fa;
+}
+
+.sidebar-brand h1 span {
+  color: #60a5fa;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sidebar-links {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 14px;
+  border-radius: 9px;
+  color: #cbd5e1;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.sidebar-links svg {
+  flex-shrink: 0;
+}
+
+.sidebar-links:hover {
+  background: #243456;
+  color: white;
+}
+
+
+.sidebar-links.active {
+  background: #2563eb;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.sidebar-links.active svg {
+  color: #ffffff;
+}
+
+
+.logout-container {
+  margin-top: auto;
+  padding-top: 24px;
+}
+
+.logout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #7f1d1d;
+  border-radius: 9px;
+  background: #991b1b;
+  color: white;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 600;
+}
+
+.logout:hover {
+  background: #b91c1c;
+}
+
+/* ===== MAIN PAGE LAYOUT ===== */
+
+.app-container {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.main-container {
+  flex: 1;
+  min-width: 0;
+  padding: 32px;
+}
+
+.main-container main {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Dashboard cards */
+.main-container .cards-container {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  width: 100%;
+}
+
+.balance-card,
+.meter-card,
+.last-card {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+/* Forms and tables */
+input,
+select,
+textarea {
+  max-width: 100%;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+}
+
+/* ===== TABLET ===== */
+
+@media (max-width: 1024px) {
+    .side-container {
+        width: 220px;
+        padding: 24px 12px 18px;
+    }
+
+    .main-container {
+        padding: 24px;
+    }
+
+    .main-container .cards-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* ===== MOBILE ===== */
+
+@media (max-width: 700px) {
+    .app-container {
+        flex-direction: column;
+    }
+
+    .side-container {
+        width: 100%;
+        min-height: auto;
+        padding: 16px;
+        box-sizing: border-box;
+    }
+
+    .sidebar-brand h1 {
+        margin-bottom: 18px;
+        font-size: 1.4rem;
+    }
+
+    .sidebar-nav {
+        flex-direction: row;
+        gap: 8px;
+        overflow-x: auto;
+        padding-bottom: 8px;
+        scrollbar-width: thin;
+    }
+
+    .sidebar-links {
+        flex: 0 0 auto;
+        gap: 8px;
+        padding: 10px 12px;
+        font-size: 0.85rem;
+        white-space: nowrap;
+    }
+
+    .sidebar-links svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    .logout-container {
+        margin-top: 10px;
+        padding-top: 0;
+    }
+
+    .logout {
+        justify-content: center;
+        padding: 10px;
+    }
+
+    .main-container {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 20px 16px;
+    }
+
+    .main-container .cards-container {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 16px;
+    }
+
+    .main-container h1 {
+        font-size: 1.5rem;
+    }
+
+    .main-container h2 {
+        font-size: 1.2rem;
+    }
+
+    /* Allow wide tables to scroll without breaking the page */
+    .table-container {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .table-container table {
+        min-width: 550px;
+    }
+
+    /* Keep form fields inside the screen */
+    .connect-meter-container,
+    .connect-meter-card {
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .connect-meter-input input {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+/* ===== SMALL PHONES ===== */
+
+@media (max-width: 380px) {
+    .side-container {
+        padding: 12px;
+    }
+
+    .sidebar-brand h1 {
+        font-size: 1.25rem;
+    }
+
+    .main-container {
+        padding: 16px 12px;
+    }
+}
+
+
+.balance-card,
+.meter-card,
+.last-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .balance-card:hover,
+    .meter-card:hover,
+    .last-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .balance-card,
+    .meter-card,
+    .last-card {
+        transition: none;
+    }
+}
+
+
+
+
+
+/**************************************  MAIN ******************************************************* */
+
+
+/* ---------- MAIN CONTENT ---------- */
+.main-container,
+.meter-container,
+.recharge-container,
+.history-container,
+.connect-meter-container {
+  flex: 1;
+  min-width: 0;
+  margin-left: 0;
+  padding: 36px;
+}
+
+.main-container h1,
+.meter-container h1,
+.recharge-container h1,
+.history-container h1,
+.connect-meter-container h1 {
+  color: #172033;
+  font-family: inherit;
+  font-size: 1.9rem;
+  font-weight: 750;
+  letter-spacing: -0.7px;
+  margin: 0 0 10px;
+}
+
+.main-container h2 {
+  color: #64748b;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 400;
+  margin: 0 0 30px;
+}
+
+
+/* ---------- DASHBOARD ---------- */
+
+.main-container {
+  flex: 1;
+  min-width: 0;
+  margin: 0;
+  padding: 36px;
+}
+
+.main-container main {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.main-container h1 {
+  margin: 0 0 8px;
+  color: #172033;
+  font-size: 1.9rem;
+  font-weight: 750;
+}
+
+.main-container h2 {
+  margin: 0 0 28px;
+  color: #64748b;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+/* Three cards on desktop */
+.main-container .cards-container {
+  display: grid;
+  grid-template-columns: repeat(3, 250px) !important;
+  column-gap: 24px;
+  row-gap: 0;
+  width: 100%;
+  margin: 0;
+}
+
+.main-container .balance-card,
+.main-container .meter-card,
+.main-container .last-card {
+  box-sizing: border-box;
+  width: auto;
+  min-width: 0;
+  min-height: 190px;
+  height: auto;
+  margin: 0;
+  padding: 24px;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  box-shadow: 0 4px 18px rgba(15, 23, 42, 0.04);
+  font-family: inherit;
+  text-align: left;
+  overflow-wrap: anywhere;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.main-container .balance-card:hover,
+.main-container .meter-card:hover,
+.main-container .last-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
+}
+
+.main-container .balance-card h4,
+.main-container .meter-card h4,
+.main-container .last-card h4 {
+  margin: 0 0 20px;
+  color: #64748b;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.main-container .balance-card .balance-value {
+  margin: 0;
+  font-size: 2.25rem;
+  font-weight: 750;
+  letter-spacing: -1px;
+  line-height: 1.3;
+}
+
+.main-container .balance-value span {
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+
+.main-container .good-balance {
+  color: #15803d;
+}
+
+.main-container .low-balance {
+  color: #b45309;
+}
+
+.main-container .empty-balance {
+  color: #dc2626;
+}
+
+.main-container .meter-number-value {
+  margin: 0 0 10px;
+  color: #172033;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.main-container .card-caption {
+  color: #64748b;
+  font-size: 0.8rem;
+}
+
+.main-container .last-card .recharge-energy {
+  margin: 0 0 14px;
+  color: #15803d;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.main-container .last-card .recharge-energy span {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.main-container .last-card p {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 8px 0;
+  font-size: 0.85rem;
+}
+
+.main-container .detail-label {
+  color: #64748b;
+  font-weight: 500;
+}
+
+.main-container .recharge-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  min-height: 46px;
+  margin-top: 24px;
+  padding: 0 22px;
+  border: none;
+  border-radius: 10px;
+  background: #2563eb;
+  color: white;
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 650;
+  cursor: pointer;
+}
+
+.main-container .recharge-button:hover {
+  background: #1d4ed8;
+}
+
+@media (max-width: 1050px) {
+  .main-container .cards-container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .main-container {
+    padding: 24px 18px;
+  }
+
+  .main-container .cards-container {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .main-container h1 {
+    font-size: 1.55rem;
+  }
+}
+
+
+
+/* Reduce unnecessary vertical scrolling on the dashboard */
+.main-container {
+  padding: 24px 32px;
+}
+
+.main-container h1 {
+  margin-bottom: 6px;
+}
+
+.main-container h2 {
+  margin-bottom: 18px;
+}
+
+.main-container .cards-container {
+  margin-top: 16px;
+  gap: 16px;
+}
+
+.main-container .balance-card,
+.main-container .meter-card,
+.main-container .last-card {
+  min-height: 160px;
+  padding: 20px;
+}
+
+.main-container .balance-card h4,
+.main-container .meter-card h4,
+.main-container .last-card h4 {
+  margin-bottom: 10px;
+}
+
+.main-container .recharge-button {
+  margin-top: 14px;
+}
+
+@media (min-width: 701px) {
+  .main-container {
+    overflow-y: auto;
+  }
+}
+
+
+.main-container .meter-card {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+
+
+
+
+
+
+/******************************************* MY METER **********************************************/
+
+
+/* ========================================
+   MY METER PAGE
+======================================== */
+
+.meter-container {
+  flex: 1;
+  min-width: 0;
+  padding: 36px;
+  background: #f1f5f9;
+  color: #172033;
+  font-family: inherit;
+}
+
+.meter-container > div:first-child {
+  margin-bottom: 28px;
+}
+
+.meter-container h1 {
+  margin: 0;
+  color: #172033;
+  font-size: 1.9rem;
+  font-weight: 750;
+  letter-spacing: -0.7px;
+}
+
+/* Meter information cards */
+.meter-cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 20px;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.number-card,
+.meter-balance-card,
+.status-card,
+.myMeter-last-card {
+  box-sizing: border-box;
+  min-width: 0;
+  min-height: 190px;
+  padding: 26px;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 4px 18px rgba(15, 23, 42, 0.04);
+  text-align: left;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.number-card:hover,
+.meter-balance-card:hover,
+.status-card:hover,
+.myMeter-last-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.07);
+}
+
+/* Card headings */
+.number-card h4,
+.meter-balance-card h4,
+.status-card h4,
+.myMeter-last-card h4 {
+  margin: 0 0 22px;
+  color: #64748b;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+/* Meter number */
+.number-card p {
+  margin: 0;
+  color: #172033;
+  font-size: 1.35rem;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+/* Balance */
+.meter-balance-card p {
+  margin: 0;
+  font-size: 2.1rem;
+  font-weight: 750;
+  letter-spacing: -0.8px;
+  overflow-wrap: anywhere;
+}
+
+.meter-balance-card .good-balance {
+  color: #15803d;
+}
+
+.meter-balance-card .low-balance {
+  color: #b45309;
+}
+
+.meter-balance-card .empty-balance {
+  color: #dc2626;
+}
+
+/* Connection status */
+.status-card > p {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin: 0;
+  padding: 9px 13px;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  font-weight: 650;
+}
+
+.status-card .connect {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.status-card .disconnect {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.status-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+/* Last recharge */
+.myMeter-last-card p {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 10px 0;
+  color: #334155;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.myMeter-last-card p span {
+  color: #64748b;
+  font-weight: 500;
+}
+
+/* Recharge button */
+.meter-recharge-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  margin-top: 26px;
+  padding: 0 22px;
+  border: none;
+  border-radius: 10px;
+  background: #2563eb;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 650;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.meter-recharge-button:hover {
+  background: #1d4ed8;
+  transform: translateY(-1px);
+}
+
+/* Responsive layout */
+@media (max-width: 900px) {
+  .meter-container {
+    padding: 28px;
+  }
+
+  .meter-cards {
+    gap: 16px;
+  }
+}
+
+@media (max-width: 650px) {
+  .meter-container {
+    padding: 24px 18px;
+  }
+
+  .meter-container h1 {
+    font-size: 1.55rem;
+  }
+
+  .meter-cards {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .number-card,
+  .meter-balance-card,
+  .status-card,
+  .myMeter-last-card {
+    min-height: 160px;
+    padding: 22px;
+  }
+}
+
+
+
+/* My Meter card refinements */
+
+.myMeter-last-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.myMeter-last-card h4 {
+  margin-bottom: 18px;
+}
+
+.myMeter-last-card p {
+  display: grid;
+  grid-template-columns: 75px minmax(0, 1fr);
+  align-items: start;
+  gap: 12px;
+  margin: 7px 0;
+}
+
+.myMeter-last-card p span {
+  color: #64748b;
+}
+
+.number-card,
+.meter-balance-card,
+.status-card,
+.myMeter-last-card {
+  min-height: 175px;
+}
+
+.meter-cards {
+  align-items: stretch;
+  gap: 20px;
+}
+
+.meter-recharge-button {
+  margin-top: 24px;
+}
+
+
+
+
+
+
+
+/* ========================================
+   RECHARGE PAGE
+======================================== */
+
+.recharge-container {
+  flex: 1;
+  min-width: 0;
+  margin: 0;
+  padding: 36px;
+  background: #f1f5f9;
+  color: #172033;
+  font-family: inherit;
+}
+
+.recharge-container h1 {
+  margin: 0 0 28px;
+  color: #172033;
+  font-size: 1.9rem;
+  font-weight: 750;
+  letter-spacing: -0.7px;
+}
+
+/* Recharge form cards */
+.recharge-cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 20px;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.meter-number-card,
+.token-card {
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  min-height: 200px;
+  height: auto;
+  padding: 28px;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 4px 18px rgba(15, 23, 42, 0.04);
+  font-family: inherit;
+  text-align: left;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.meter-number-card:hover,
+.token-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.07);
+}
+
+/* Field labels */
+.meter-number-card .label-p,
+.token-card p {
+  margin: 0 0 20px;
+  color: #334155;
+  font-size: 1rem;
+  font-weight: 650;
+  text-align: left;
+}
+
+/* Inputs */
+.meter-number-card input,
+.token-card input {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  min-height: 48px;
+  padding: 12px 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 9px;
+  outline: none;
+  background: #f8fafc;
+  color: #172033;
+  font-family: inherit;
+  font-size: 0.95rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.meter-number-card input:focus,
+.token-card input:focus {
+  border-color: #2563eb;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.meter-number-card input::placeholder,
+.token-card input::placeholder {
+  color: #94a3b8;
+}
+
+/* Activate/recharge button */
+.activate-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 170px;
+  min-height: 48px;
+  margin-top: 26px;
+  padding: 0 22px;
+  border: none;
+  border-radius: 10px;
+  background: #2563eb;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 650;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.activate-button:hover:not(:disabled) {
+  background: #1d4ed8;
+  transform: translateY(-1px);
+}
+
+.activate-button:disabled {
+  background: #94a3b8;
+  color: #ffffff;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* Responsive layout */
+@media (max-width: 850px) {
+  .recharge-container {
+    padding: 28px;
+  }
+
+  .recharge-cards {
+    gap: 16px;
+  }
+}
+
+@media (max-width: 650px) {
+  .recharge-container {
+    padding: 24px 18px;
+  }
+
+  .recharge-container h1 {
+    font-size: 1.55rem;
+  }
+
+  .recharge-cards {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .meter-number-card,
+  .token-card {
+    min-height: 160px;
+    padding: 22px;
+  }
+
+  .activate-button {
+    width: 100%;
+  }
+}
+
+
+/* Recharge page message */
+.recharge-message {
+  width: fit-content;
+  max-width: 100%;
+  box-sizing: border-box;
+  margin: 0 0 20px;
+  padding: 12px 16px;
+  border: 1px solid #bfdbfe;
+  border-radius: 10px;
+  background: #eff6ff;
+  color: #1d4ed8;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+/* Connected meter details */
+.meter-number-card > p:not(.label-p) {
+  color: #64748b;
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+
+/* Keep the field label prominent */
+.meter-number-card .label-p,
+.token-card > p {
+  margin-bottom: 18px;
+}
+
+/* Helpful instructions */
+.meter-number-card input + p {
+  margin: 12px 0 0;
+  color: #64748b;
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+
+/* Consistent card alignment */
+.recharge-cards {
+  align-items: start;
+}
+
+.meter-number-card,
+.token-card {
+  box-sizing: border-box;
+  align-self: stretch;
+}
+
+/* Smaller screens */
+@media (max-width: 650px) {
+  .recharge-message {
+    width: 100%;
+  }
+}
+
+
+/* Connected meter information */
+
+.meter-number-card > p:not(.label-p):first-of-type {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  margin: 0 0 16px;
+  padding: 12px 14px;
+  border: 1px solid #bfdbfe;
+  border-radius: 8px;
+  background: #eff6ff;
+  color: #1d4ed8;
+  font-size: 0.88rem;
+  font-weight: 600;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+
+
+
+/*************************************** HISTORY *******************************************/
+
+
+/* ========================================
+   RECHARGE HISTORY PAGE
+======================================== */
+
+.history-container {
+  flex: 1;
+  min-width: 0;
+  margin: 0;
+  padding: 36px;
+  background: #f1f5f9;
+  color: #172033;
+  font-family: inherit;
+}
+
+.history-container > div:first-child h1 {
+  margin: 0 0 28px;
+  font-size: 1.9rem;
+  font-weight: 750;
+  letter-spacing: -0.7px;
+  color: #172033;
+}
+
+/* Main table card */
+.history-container .table-card {
+  width: 100%;
+  max-width: 1400px;
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 28px;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 4px 18px rgba(15, 23, 42, 0.04);
+}
+
+.history-container .table-card h2 {
+  margin: 0 0 24px;
+  color: #172033;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+/* Allow horizontal scrolling on smaller screens */
+.history-container .table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+}
+
+/* Table */
+.history-container .history-table {
+  width: 100%;
+  min-width: 850px;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-family: inherit;
+  font-size: 0.9rem;
+  text-align: left;
+}
+
+/* Header */
+.history-container .history-table-header th {
+  padding: 16px;
+  background: #2563eb;
+  color: #ffffff;
+  font-weight: 650;
+  white-space: nowrap;
+  border-bottom: 1px solid #1d4ed8;
+}
+
+.history-container .history-table-header th:first-child {
+  border-top-left-radius: 8px;
+}
+
+.history-container .history-table-header th:last-child {
+  border-top-right-radius: 8px;
+}
+
+/* Table cells */
+.history-container .history-table-body td {
+  padding: 16px;
+  color: #334155;
+  border-bottom: 1px solid #e2e8f0;
+  white-space: nowrap;
+}
+
+.history-container .history-table-body tr:last-child td {
+  border-bottom: none;
+}
+
+.history-container .history-table-body tr {
+  transition: background 0.2s ease;
+}
+
+.history-container .history-table-body tr:hover {
+  background: #f8fafc;
+}
+
+/* Energy values */
+.history-container .history-table-body td:nth-child(3) {
+  color: #15803d;
+  font-weight: 650;
+}
+
+/* Successful and failed status labels */
+.history-container .history-table-body td.successful,
+.history-container .history-table-body td.failed {
+  display: table-cell;
+  font-weight: 600;
+}
+
+.history-container .history-table-body td.successful {
+  color: #15803d;
+  background: #f0fdf4;
+}
+
+.history-container .history-table-body td.failed {
+  color: #b91c1c;
+  background: #fef2f2;
+}
+
+/* Empty history message */
+.history-container .history-table-body .no-transactions {
+  padding: 32px 16px;
+  color: #64748b;
+  text-align: center;
+  white-space: normal;
+}
+
+/* Clear history button */
+.history-container .clear-history-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  margin-top: 24px;
+  padding: 0 22px;
+  border: 1px solid #fecaca;
+  border-radius: 10px;
+  background: #fff1f2;
+  color: #b91c1c;
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 650;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.history-container .clear-history-button:hover {
+  background: #fee2e2;
+  transform: translateY(-1px);
+}
+
+/* Responsive layout */
+@media (max-width: 850px) {
+  .history-container {
+    padding: 28px;
+  }
+
+  .history-container .table-card {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 650px) {
+  .history-container {
+    padding: 24px 18px;
+  }
+
+  .history-container > div:first-child h1 {
+    font-size: 1.55rem;
+  }
+
+  .history-container .table-card {
+    padding: 16px;
+  }
+
+  .history-container .table-card h2 {
+    font-size: 1.05rem;
+  }
+
+  .history-container .history-table {
+    font-size: 0.82rem;
+  }
+
+  .history-container .history-table-header th,
+  .history-container .history-table-body td {
+    padding: 12px;
+  }
+}
+
+
+/* ========================================
+   CONNECT METER PAGE
+======================================== */
+
+.connect-meter-container {
+  flex: 1;
+  min-width: 0;
+  padding: 36px;
+  background: #f8fafc;
+  color: #172033;
+  font-family: inherit;
+}
+
+/* Page heading */
+.connect-meter-page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.connect-meter-page-header h1 {
+  margin: 0 0 8px;
+  color: #172033;
+  font-size: 1.9rem;
+  font-weight: 750;
+  letter-spacing: -0.7px;
+}
+
+.connect-meter-page-header p {
+  margin: 0;
+  color: #64748b;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Lightning icon beside the heading */
+.connect-meter-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 54px;
+  height: 54px;
+  border-radius: 15px;
+  background: #dbeafe;
+  color: #2563eb;
+  font-size: 1.8rem;
+}
+
+/* Status message */
+.connect-meter-message {
+  max-width: 650px;
+  margin: 0 auto 20px;
+  padding: 14px 16px;
+  border: 1px solid #bfdbfe;
+  border-radius: 10px;
+  background: #eff6ff;
+  color: #1d4ed8;
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
+/* Main connection card */
+.connect-meter-card {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 950px;
+  margin: 0 auto;
+  padding: 32px;
+  border: 1px solid #e2e8f0;
+  border-radius: 18px;
+  background: #ffffff;
+  box-shadow: 0 8px 30px rgba(15, 23, 42, 0.05);
+}
+
+/* Card heading */
+.connect-meter-header {
+  margin-bottom: 28px;
+}
+
+.connect-meter-card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  margin-bottom: 20px;
+  border-radius: 14px;
+  background: #eff6ff;
+  color: #2563eb;
+  font-size: 1.7rem;
+}
+
+.connect-meter-header h2 {
+  margin: 0 0 10px;
+  color: #172033;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.connect-meter-header p {
+  margin: 0;
+  color: #64748b;
+  font-size: 0.92rem;
+  line-height: 1.7;
+}
+
+/* Meter number field */
+.connect-meter-input {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 26px;
+}
+
+.connect-meter-input label {
+  color: #334155;
+  font-size: 0.9rem;
+  font-weight: 650;
+}
+
+.connect-meter-input input {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 50px;
+  padding: 13px 15px;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  outline: none;
+  background: #ffffff;
+  color: #172033;
+  font: inherit;
+  font-size: 0.95rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.connect-meter-input input::placeholder {
+  color: #94a3b8;
+}
+
+.connect-meter-input input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.connect-meter-input small {
+  color: #64748b;
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+
+/* Action buttons */
+.connect-meter-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.connect-meter-button,
+.disconnect-meter-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 46px;
+  padding: 0 20px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 650;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.connect-meter-button {
+  background: #2563eb;
+  color: #ffffff;
+}
+
+.connect-meter-button:hover {
+  background: #1d4ed8;
+  transform: translateY(-1px);
+}
+
+.disconnect-meter-button {
+  border-color: #fecaca;
+  background: #fff1f2;
+  color: #b91c1c;
+}
+
+.disconnect-meter-button:hover {
+  background: #ffe4e6;
+  transform: translateY(-1px);
+}
+
+/* Information note */
+.connect-meter-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  box-sizing: border-box;
+  max-width: 650px;
+  margin: 20px auto 0;
+  padding: 16px;
+  border: 1px solid #dbeafe;
+  border-radius: 12px;
+  background: #eff6ff;
+  color: #1d4ed8;
+}
+
+.connect-meter-note span {
+  flex-shrink: 0;
+  font-size: 1.1rem;
+}
+
+.connect-meter-note p {
+  margin: 0;
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+
+/* Responsive layout */
+@media (max-width: 700px) {
+  .connect-meter-container {
+    padding: 24px 18px;
+  }
+
+  .connect-meter-page-header h1 {
+    font-size: 1.55rem;
+  }
+
+  .connect-meter-card {
+    padding: 22px;
+  }
+
+  .connect-meter-actions {
+    flex-direction: column;
+  }
+
+  .connect-meter-button,
+  .disconnect-meter-button {
+    width: 100%;
+  }
+}
+
+
+/* Connect Meter finishing touches */
+
+.connect-meter-container {
+  background: #f1f5f9;
+}
+
+.connect-meter-page-header {
+  margin-bottom: 36px;
+}
+
+.connect-meter-card {
+  padding: 36px;
+  border-color: #e2e8f0;
+  box-shadow: 0 12px 35px rgba(15, 23, 42, 0.07);
+}
+
+.connect-meter-card-icon {
+  width: 58px;
+  height: 58px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #dbeafe, #eff6ff);
+  font-size: 1.8rem;
+}
+
+.connect-meter-input input {
+  background: #f8fafc;
+}
+
+.connect-meter-input input:focus {
+  background: #ffffff;
+}
+
+.connect-meter-note {
+  padding: 13px 16px;
+  background: #eff6ff;
+  border-color: #dbeafe;
+}
+
+.connect-meter-button,
+.disconnect-meter-button {
+  min-height: 48px;
+}
+
+@media (max-width: 700px) {
+  .connect-meter-card {
+    padding: 22px;
+  }
+
+  .connect-meter-page-header {
+    margin-bottom: 26px;
+  }
+}
